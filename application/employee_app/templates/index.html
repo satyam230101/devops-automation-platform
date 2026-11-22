@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Employee Management System</h1>
+        <p>Manage your organization's workforce</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 id="formTitle">Add Employee</h2>
+
+            <form id="employeeForm">
+                <input type="hidden" id="employeeId">
+
+                <input type="text" id="name"
+                       placeholder="Employee Name" required>
+
+                <input type="email" id="email"
+                       placeholder="Email Address" required>
+
+                <input type="text" id="department"
+                       placeholder="Department" required>
+
+                <input type="text" id="designation"
+                       placeholder="Designation" required>
+
+                <button type="submit" id="submitButton">
+                    Add Employee
+                </button>
+
+                <button type="button" id="cancelButton"
+                        style="display:none;">
+                    Cancel Edit
+                </button>
+            </form>
+
+            <p id="message"></p>
+        </section>
+
+        <section class="employee-section">
+            <h2>Employee Directory</h2>
+
+            <input type="text" id="search"
+                   placeholder="Search employees...">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeList"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
