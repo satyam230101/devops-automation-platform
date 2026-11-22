@@ -1,0 +1,16 @@
+
+venv/
+.venv/
+application/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.git/
+.gitignore
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+*.log
+screenshots/
