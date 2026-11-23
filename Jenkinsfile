@@ -24,10 +24,12 @@ pipeline {
 
         stage('Run Tests') {
     steps {
-        withEnv(["PYTHONPATH=${WORKSPACE}\\application"]) {
-            bat '.venv\\Scripts\\python.exe -m pytest application\\tests -v'
-        }
+        bat '''
+        set "PYTHONPATH=%WORKSPACE%\\application"
+        .venv\\Scripts\\python.exe -m pytest application\\tests -v
+        '''
     }
+}
 }
 
         stage('Build Docker Image') {
