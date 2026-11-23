@@ -1,5 +1,4 @@
 
-
 pipeline {
     agent any
 
@@ -23,14 +22,13 @@ pipeline {
         }
 
         stage('Run Tests') {
-    steps {
-        bat '''
-        set "PYTHONPATH=%WORKSPACE%\\application"
-        .venv\\Scripts\\python.exe -m pytest application\\tests -v
-        '''
-    }
-}
-}
+            steps {
+                bat '''
+                set "PYTHONPATH=%WORKSPACE%\\application"
+                .venv\\Scripts\\python.exe -m pytest application\\tests -v
+                '''
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
